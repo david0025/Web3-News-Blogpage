@@ -1,0 +1,322 @@
+@font-face {
+        font-family: "Inter";
+        src: url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+        font-style: oblique 0deg 10deg;
+        font-weight: 100 900;
+        font-display: swap;
+}
+
+*{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
+
+html{
+        scroll-behavior: smooth;
+}
+
+body{
+        background:hsl(36, 100%, 99%);
+        color:  hsl(240, 100%, 5%);
+        font-family: "Inter", sans-serif;
+}
+
+button,
+a {
+        font-family: "Inter", sans-serif;
+}
+
+button {
+        cursor: pointer;
+}
+
+.site-header {
+        margin: 0 auto;
+        min-height:184px ;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 77%;
+}
+
+.nav {
+        display:flex ;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.nav a {
+        color:hsl(236, 13%, 42%) ;
+        text-decoration: none;
+        font-size:14px ;
+        transition:color .2s ease ;
+}
+
+.nav a:hover,
+.nav a.active {
+        color:  hsl(5, 85%, 63%);
+}
+
+.Menu-toggle {
+        display: none;
+        border: 0;
+        background:transparent ;
+        width: 40px;
+}
+
+.Menu-toggle span {
+        display: block;
+        height: 2px;
+        background:hsl(240, 100%, 5%);
+        margin: 6px 0;
+}
+
+.container {
+        width: 77%;
+        margin: auto;
+}
+
+
+.hero-grid {
+        display: grid;
+        grid-template-columns:2fr 0.9fr;
+        gap: 30px;
+        width:100%;
+}
+
+.featured > img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+}
+
+.featured-copy {
+        display: grid;
+        grid-template-columns: .9fr 1fr;
+        gap: 35px;
+        padding-top: 32px;
+}
+
+.featured h1 {
+        color:hsl(240, 100%, 5%) ;
+        font-size: clamp(42px, 4vw, 58px);
+        line-height: .96;
+        letter-spacing: -2.5px;
+        font-weight: 800;
+}
+
+.featured-details {
+        padding-top: 2px;
+}
+
+.featured-details p {
+        color: hsl(233, 8%, 79%) ;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 27px;
+}
+
+.read-more {
+        border: 0;
+        background: hsl(240, 100%, 5%);
+        color: hsl(36, 100%, 99%);
+        margin: 14px 2px;
+        padding: 16px 30px;
+        min-width: 185px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        transition: transform .2s ease, background .2s ease;
+}
+
+.read-more:hover{
+        transform: translate(-2px);
+        background:hsl(5, 85%, 63%) ;
+}
+
+.new-panel {
+        background:hsl(240, 100%, 5%) ;
+        color:hsl(35, 77%, 62%) ;
+        padding:30px 24px 20px ;
+}
+
+.new-panel >h2 {
+        background: hsl(240, 100%, 5%);
+        color: hsl(35, 77%, 62%);
+        font-size: 41px;
+        margin-bottom: 19px;
+}
+
+.new-item {
+        padding: 0 0 25px;
+        margin-bottom: 26px;
+        border-bottom:1px solid hsl(233, 8%, 79%) ;
+}
+
+.new-item:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+}
+
+.new-item h3 {
+        font-size: 19px;
+        margin-bottom: 8px;
+        color: hsl(36, 100%, 99%) ;
+}
+
+.new-item:last-child h3 {
+        color:  hsl(35, 77%, 62%) ;
+}
+
+.new-item p {
+        color:hsl(233, 8%, 79%);
+        font-size:14px ;
+        line-height: 1.65;
+}
+
+.articles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 38px;
+        margin-top: 70px;
+}
+
+.article-card {
+        display: grid;
+        grid-template-columns: 102px 1fr;
+        gap: 22px;
+}
+
+.article-card img {
+        width: 102px;
+        height: 127px;
+        object-fit: cover;
+}
+
+.number {
+        display: block;
+        color:hsl(5, 85%, 63%) ;
+        font-size: 31px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 10px;
+}
+
+.article-card h2 {
+        color: hsl(240, 100%, 5%) ;
+        font-size: 16px;
+        margin-bottom: 9px;
+}
+
+.article-card:nth-last-child(2) h2 {
+        color: hsl(5, 85%, 63%);
+}
+
+.article-card p {
+        color: hsl(236, 13%, 42%);
+        font-size: 13px;
+        line-height: 1.65;
+}
+
+.toast {
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        z-index: 10;
+        padding: 12px 18px;
+        color: hsl(36, 100%, 99%);
+        background: hsl(240, 100%, 5%);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, 10px);
+        transition: opacity .2s ease, transform .2s ease;
+}
+
+.toast.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+}
+
+
+@media (max-width: 850px) {
+        .site-header{
+                min-height: 120px;
+        }
+
+        .Menu-toggle {
+                display: block;
+                z-index: 5;
+        }
+
+        .nav {
+                display: none;
+                position: fixed;
+                inset: 0 0 0 auto;
+                width: min(68vw, 300px);
+                height: 100vh;
+                padding: 145px 24px 24px;
+                background:hsl(36, 100%, 99%) ;
+                box-shadow: 0 12px 35px rgba(0,0,0,.12);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                z-index: 4;
+        }
+
+        .nav.open {
+                display: flex;
+        }
+
+        .hero-grid{
+                grid-template-columns: 1fr;
+        }
+
+        .new-panel {
+                margin-top: 0;
+        }
+
+        .articles {
+                grid-template-columns: 1fr;
+                gap: 30px;
+        }
+}
+
+@media (max-width: 600px) {
+        .site-header,
+        .container {
+                width: min(100% - 32px, 1110px);
+        }
+
+        .logo {
+                width: 48px;
+        }
+
+        .featured > img {
+                height: 220px;
+        }
+
+        .featured-copy {
+                grid-template-columns: 1fr;
+                gap: 20px;
+        }
+
+        .featured h1 {
+                font-size: 43px;
+        }
+
+        .new-panel {
+                padding: 25px 20px;
+        }
+
+        .articles {
+                margin-top: 50px;
+        }
+
+        .categories {
+                padding-top: 70px;
+        }
+}
